@@ -2,7 +2,7 @@ package com.example.iyeongjun.gucknaesan.di.component
 
 import android.content.Context
 import com.example.iyeongjun.gucknaesan.ForestApp
-import com.example.iyeongjun.gucknaesan.di.binder.ActivityBinder
+import com.example.iyeongjun.gucknaesan.di.module.binder.ActivityBinder
 import com.example.iyeongjun.gucknaesan.di.module.ApiModule
 import com.example.iyeongjun.gucknaesan.di.module.ContextModule
 import dagger.BindsInstance
