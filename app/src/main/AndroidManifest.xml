@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.iyeongjun.gucknaesan">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".ForestApp"
         android:allowBackup="true"
@@ -10,15 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.iyeongjun.gucknaesan.ui.activities.main.MainActivity">
-        </activity>
-        <activity android:name="com.example.iyeongjun.gucknaesan.ui.activities.splash.SplashActivity">
+        <activity android:name=".ui.activities.main.MainActivity" />
+        <activity android:name=".ui.activities.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activities.detail.DetailActivity" />
+        <activity android:name=".ui.activities.list.ListActivity"></activity>
     </application>
 
 </manifest>

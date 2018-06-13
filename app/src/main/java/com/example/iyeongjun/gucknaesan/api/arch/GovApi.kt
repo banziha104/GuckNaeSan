@@ -1,6 +1,6 @@
 package com.example.iyeongjun.gucknaesan.api.arch
 
-import com.example.iyeongjun.gucknaesan.api.model.GovModel
+import com.example.iyeongjun.gucknaesan.api.model.gov.GovModel
 import com.example.iyeongjun.gucknaesan.const.AUTH_KEY
 import io.reactivex.Observable
 import retrofit2.http.GET

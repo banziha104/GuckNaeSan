@@ -2,9 +2,11 @@ package com.example.iyeongjun.gucknaesan.di.component
 
 import android.content.Context
 import com.example.iyeongjun.gucknaesan.ForestApp
-import com.example.iyeongjun.gucknaesan.di.module.binder.ActivityBinder
+import com.example.iyeongjun.gucknaesan.di.module.binder.ui.activities.ActivityBinder
 import com.example.iyeongjun.gucknaesan.di.module.ApiModule
 import com.example.iyeongjun.gucknaesan.di.module.ContextModule
+import com.example.iyeongjun.gucknaesan.di.module.DataModule
+import com.example.iyeongjun.gucknaesan.di.module.DriverModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -16,7 +18,9 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         ActivityBinder::class,
         ContextModule::class,
-        ApiModule::class
+        ApiModule::class,
+        DataModule::class,
+        DriverModule::class
 ))
 interface AppComponent : AndroidInjector<ForestApp>{
 

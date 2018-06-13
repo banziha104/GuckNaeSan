@@ -1,4 +1,4 @@
-package com.example.iyeongjun.gucknaesan.di.module.binder.ui
+package com.example.iyeongjun.gucknaesan.di.module.binder.ui.activities
 
 import com.example.iyeongjun.gucknaesan.api.arch.GovApi
 import com.example.iyeongjun.gucknaesan.ui.activities.main.MainViewModelFactory
