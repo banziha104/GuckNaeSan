@@ -1,7 +1,7 @@
-package com.example.iyeongjun.gucknaesan.di.module.binder
+package com.example.iyeongjun.gucknaesan.di.module.binder.ui.activities
 
-import com.example.iyeongjun.gucknaesan.di.module.binder.ui.MainModule
-import com.example.iyeongjun.gucknaesan.di.module.binder.ui.SplashModule
+import com.example.iyeongjun.gucknaesan.di.module.binder.ui.activities.MainModule
+import com.example.iyeongjun.gucknaesan.di.module.binder.ui.activities.SplashModule
 import com.example.iyeongjun.gucknaesan.ui.activities.main.MainActivity
 import com.example.iyeongjun.gucknaesan.ui.activities.splash.SplashActivity
 import dagger.Module
