@@ -3,16 +3,12 @@ package com.example.iyeongjun.gucknaesan.ui.activities.splash
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import com.example.iyeongjun.gucknaesan.R
-import com.example.iyeongjun.gucknaesan.api.local.mountJson
 import com.example.iyeongjun.gucknaesan.api.model.gov.GovModel
-import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
 import com.example.iyeongjun.gucknaesan.ui.activities.main.MainActivity
 import com.example.iyeongjun.gucknaesan.util.PermissionController
-import com.google.gson.Gson
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.subjects.BehaviorSubject
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 

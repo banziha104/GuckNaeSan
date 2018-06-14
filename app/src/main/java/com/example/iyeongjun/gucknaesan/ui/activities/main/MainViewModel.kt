@@ -8,5 +8,11 @@ import io.reactivex.Observable
 class MainViewModel(val api : GovApi) : ViewModel(){
     val govModel : Observable<GovModel>
         get() = api.getGovData()
-
+//    fun getGovmodel(mtName : String?) : Observable<GovModel>{
+//        mtName.let {
+//            return api.getGovData(it)
+//        }?.let {
+//            return api
+//        }
+//    }
 }
