@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.api.model.gov.GovModel
+import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
 import com.example.iyeongjun.gucknaesan.ui.activities.main.MainActivity
 import com.example.iyeongjun.gucknaesan.util.PermissionController
 import dagger.android.support.DaggerAppCompatActivity
@@ -17,6 +18,7 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
 
     @Inject lateinit var viewModelFactory: SplashViewModelFactory
     @Inject lateinit var govDriver: BehaviorSubject<GovModel>
+    @Inject lateinit var mountDriver : BehaviorSubject<MountModel>
     private lateinit var viewModel: SplashViewModel
 
     override fun init() {
@@ -26,6 +28,7 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
                     govDriver.onNext(it)
                     startActivity<MainActivity>()
                 }
+        mountDriver.onNext(viewModel.model)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

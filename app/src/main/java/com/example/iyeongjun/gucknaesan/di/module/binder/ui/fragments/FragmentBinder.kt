@@ -2,7 +2,7 @@ package com.example.iyeongjun.gucknaesan.di.module.binder.ui.fragments
 
 import com.example.iyeongjun.gucknaesan.ui.fragments.club.ClubFragment
 import com.example.iyeongjun.gucknaesan.ui.fragments.mount.MountFragment
-import com.example.iyeongjun.gucknaesan.ui.fragments.user.UserFragment
+import com.example.iyeongjun.gucknaesan.ui.fragments.reco.RecoFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -14,7 +14,7 @@ abstract class FragmentBinder{
     @ContributesAndroidInjector(modules = arrayOf(MountModule::class))
     abstract fun bindMountFragment() : MountFragment
 
-    @ContributesAndroidInjector(modules = arrayOf(UserModule::class))
-    abstract fun bindUserFragment() : UserFragment
+    @ContributesAndroidInjector(modules = arrayOf(RecoModule::class))
+    abstract fun bindUserFragment() : RecoFragment
 
 }

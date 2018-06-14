@@ -13,10 +13,8 @@ import org.jetbrains.anko.info
 import javax.inject.Inject
 
 class ClubFragment : DaggerFragment(),AnkoLogger {
-    @Inject lateinit var model : MountModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        info(model)
         return inflater.inflate(R.layout.fragment_club, container, false)
     }
 }
