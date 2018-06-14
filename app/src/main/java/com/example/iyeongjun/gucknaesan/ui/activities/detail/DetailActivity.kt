@@ -1,7 +1,7 @@
 package com.example.iyeongjun.gucknaesan.ui.activities.detail
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.example.iyeongjun.gucknaesan.R
 
 class DetailActivity : AppCompatActivity() {
