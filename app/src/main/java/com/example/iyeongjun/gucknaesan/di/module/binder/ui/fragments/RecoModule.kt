@@ -2,13 +2,14 @@ package com.example.iyeongjun.gucknaesan.di.module.binder.ui.fragments
 
 import android.content.Context
 import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
-import com.example.iyeongjun.gucknaesan.ui.fragments.mount.MountViewModelFactory
+import com.example.iyeongjun.gucknaesan.ui.fragments.reco.RecoViewModelFactory
 import dagger.Module
 import dagger.Provides
 import io.reactivex.subjects.BehaviorSubject
 
 @Module
-class MountModule{
+class RecoModule{
     @Provides
-    fun provideMountViewModelFactory(driver : BehaviorSubject<MountModel>, context : Context) : MountViewModelFactory = MountViewModelFactory(driver,context)
+    fun provideRecoViewModelFactory(driver : BehaviorSubject<MountModel>, context : Context)
+            = RecoViewModelFactory(driver,context)
 }

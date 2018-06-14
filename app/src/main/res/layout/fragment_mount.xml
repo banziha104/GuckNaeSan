@@ -5,10 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.mount.MountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mountRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="마운트" />
-
+        android:background="@color/colorBack" />
 </FrameLayout>
