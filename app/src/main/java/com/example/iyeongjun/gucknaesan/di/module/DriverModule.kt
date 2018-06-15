@@ -1,6 +1,7 @@
 package com.example.iyeongjun.gucknaesan.di.module
 
 import com.example.iyeongjun.gucknaesan.api.model.gov.GovModel
+import com.example.iyeongjun.gucknaesan.api.model.mount.Item
 import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
 import dagger.Module
 import dagger.Provides
@@ -18,4 +19,7 @@ class DriverModule{
     @Singleton
     fun provideMountDataDriver() = BehaviorSubject.create<MountModel>()
 
+    @Provides
+    @Singleton
+    fun provideItemDriver() = BehaviorSubject.create<Item>()
 }

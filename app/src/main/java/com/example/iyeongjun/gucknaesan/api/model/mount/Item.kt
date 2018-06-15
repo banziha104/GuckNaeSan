@@ -6,5 +6,8 @@ data class Item(
     @SerializedName("mtName") var mtName: String,
     @SerializedName("height") var height: Double,
     @SerializedName("description") var description: String,
-    @SerializedName("imgUrl") var imgUrl : String
+    @SerializedName("imgUrl") var imgUrl : String,
+    @SerializedName("lat") var lat : Double,
+    @SerializedName("lon") var lon : Double,
+    @SerializedName("address") var address : String
 )

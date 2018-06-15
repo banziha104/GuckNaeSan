@@ -1,6 +1,7 @@
 package com.example.iyeongjun.gucknaesan.di.module.binder.ui.fragments
 
 import android.content.Context
+import com.example.iyeongjun.gucknaesan.api.model.mount.Item
 import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
 import com.example.iyeongjun.gucknaesan.ui.fragments.reco.RecoViewModelFactory
 import dagger.Module
@@ -10,6 +11,8 @@ import io.reactivex.subjects.BehaviorSubject
 @Module
 class RecoModule{
     @Provides
-    fun provideRecoViewModelFactory(driver : BehaviorSubject<MountModel>, context : Context)
-            = RecoViewModelFactory(driver,context)
+    fun provideRecoViewModelFactory(driver : BehaviorSubject<MountModel>,
+                                    sendDriver : BehaviorSubject<Item>,
+                                    context : Context)
+            = RecoViewModelFactory(driver,sendDriver,context)
 }
