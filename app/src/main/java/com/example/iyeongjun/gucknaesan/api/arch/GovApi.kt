@@ -14,4 +14,13 @@ interface GovApi{
             @Query("numOfRows") numOfRows : Int = 100,
             @Query("_type") _type : String = "json"
     ) : Observable<GovModel>
+
+    @GET("/1400000/service/cultureInfoService/mntInfoOpenAPI")
+    fun getSearcgGovData(
+            @Query("ServiceKey", encoded = true) serviceKey : String = AUTH_KEY,
+            @Query("pageNo") pageNo : Int = 1,
+            @Query("numOfRows") numOfRows : Int = 100,
+            @Query("searchWrd")  searchWrd : String,
+            @Query("_type") _type : String = "json"
+    ) : Observable<GovModel>
 }

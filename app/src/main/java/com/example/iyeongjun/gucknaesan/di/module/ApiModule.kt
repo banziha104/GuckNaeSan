@@ -11,6 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -28,7 +29,6 @@ class ApiModule{
             .addConverterFactory(gsonConverter)
             .build()
             .create(GovApi::class.java)
-
     @Provides
     @Singleton
     fun provideCallAdapterFactory(): CallAdapter.Factory
