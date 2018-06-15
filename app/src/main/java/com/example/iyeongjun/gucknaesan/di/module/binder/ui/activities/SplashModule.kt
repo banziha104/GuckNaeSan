@@ -10,6 +10,6 @@ import javax.inject.Named
 @Module
 class SplashModule{
     @Provides
-    fun provideViewModelFactory(api : GovApi, model : MountModel) : SplashViewModelFactory
+    fun provideViewModelFactory(api : GovApi, model : MountModel)
             = SplashViewModelFactory(api,model)
 }

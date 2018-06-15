@@ -36,7 +36,7 @@ class RecoFragment : DaggerFragment() ,AnkoLogger {
     private fun bind(){
         viewModel.driver.subscribe {
             recoRecyclerView.apply {
-                adapter = RecoAdapter(viewModel.mountModel,viewModel.context)
+                adapter = RecoAdapter(viewModel.mountModel,viewModel.context,viewModel.sendDriver)
                 layoutManager = GridLayoutManager(viewModel.context,2)
             }
         }

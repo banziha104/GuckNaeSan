@@ -9,6 +9,5 @@ import javax.inject.Named
 @Module
 class MainModule{
     @Provides
-    fun provideViewModelFactory(api : GovApi) : MainViewModelFactory
-        = MainViewModelFactory(api)
+    fun provideViewModelFactory(api : GovApi) = MainViewModelFactory(api)
 }
