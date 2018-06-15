@@ -5,5 +5,6 @@ data class Item(
     @SerializedName("no") var no: Int,
     @SerializedName("mtName") var mtName: String,
     @SerializedName("height") var height: Double,
-    @SerializedName("description") var description: String
+    @SerializedName("description") var description: String,
+    @SerializedName("imgUrl") var imgUrl : String
 )
