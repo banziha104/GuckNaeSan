@@ -7,10 +7,12 @@
     tools:context=".ui.activities.detail.DetailActivity">
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="348dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,6 +33,14 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@android:color/holo_blue_bright" />
 
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/segment"
+                    tools:layout_editor_absoluteY="300dp" />
+
                 <TextView
                     android:id="@+id/txtDetailTitle"
                     android:layout_width="wrap_content"
@@ -49,6 +59,13 @@
                 android:layout_height="150dp"
                 android:text="TextView" />
 
+            <fragment
+                android:id="@+id/mapDetail"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                tools:context=".MapsActivity"/>
+
         </LinearLayout>
     </ScrollView>
 
@@ -60,4 +77,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
