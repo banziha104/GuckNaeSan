@@ -3,6 +3,7 @@ package com.example.iyeongjun.gucknaesan.ui.fragments.club
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -19,8 +20,11 @@ import org.jetbrains.anko.info
 import javax.inject.Inject
 
 class ClubFragment : DaggerFragment(),AnkoLogger {
+
     @Inject lateinit var viewModelFactory: ClubViewModelFactory
     lateinit var viewModel : ClubViewModel
+    private val VERTICAL = 1
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_club, container, false)
@@ -35,9 +39,10 @@ class ClubFragment : DaggerFragment(),AnkoLogger {
         provinceRecyclerview.apply {
             adapter = ProvinceAdapter(viewModel.province)
             layoutManager = LinearLayoutManager(viewModel.context)
+            addItemDecoration(DividerItemDecoration(activity,VERTICAL))
         }
         clubRecyclerview.apply{
-            adapter = ClubAdapter(viewModel.model.items)
+            adapter = ClubAdapter(viewModel.model.items,viewModel.context)
             layoutManager = LinearLayoutManager(viewModel.context)
         }
     }
