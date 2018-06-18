@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.api.model.mount.Item
+import com.example.iyeongjun.gucknaesan.ex.getLimitedString
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
 import com.example.iyeongjun.gucknaesan.ui.activities.detail.DetailActivity
 import com.jakewharton.rxbinding2.view.clicks
@@ -29,14 +30,16 @@ class MountAdapter(val items : List<Item>, val context : Context,val sendDriver 
 
     override fun onBindViewHolder(holder: MountViewHolder, position: Int) {
         holder.apply {
-            item = items[position]
-            txtTitle.setText(items[position].mtName)
-            txtDes.setText(items[position].description)
-            txtHeight.setText("${items[position].height}m")
-            GlideApp
-                    .with(context)
-                    .load(items[position].imgUrl)
-                    .into(imgMount)
+            items[position].let {
+                item = it
+                txtTitle.setText(it.mtName)
+                txtDes.setText(it.description.getLimitedString(180))
+                txtHeight.setText("${it.height}m")
+                GlideApp
+                        .with(context)
+                        .load(items[position].imgUrl)
+                        .into(imgMount)
+            }
         }
     }
     inner class MountViewHolder (view: View) : RecyclerView.ViewHolder(view){
