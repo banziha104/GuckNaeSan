@@ -35,7 +35,7 @@ class ClubAdapter(val data : List<Item>,val context: Context) : RecyclerView.Ada
             }
         }
     }
-
+    
     class ClubViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val txtTitle = view.findViewById<TextView>(R.id.txtClubTitle)
         val txtDes = view.findViewById<TextView>(R.id.txtClubDes)
