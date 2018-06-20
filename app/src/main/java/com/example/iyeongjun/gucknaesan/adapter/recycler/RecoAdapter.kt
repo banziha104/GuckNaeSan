@@ -7,18 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.bumptech.glide.request.RequestOptions.bitmapTransform
 import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.api.model.mount.Item
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
 import com.example.iyeongjun.gucknaesan.ui.activities.detail.DetailActivity
 import io.reactivex.subjects.BehaviorSubject
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 import org.jetbrains.anko.startActivity
-import org.w3c.dom.Text
 
 class RecoAdapter(val items : ArrayList<Item>,val context : Context,val sendDriver : BehaviorSubject<Item>) : RecyclerView.Adapter<RecoAdapter.RecoViewHolder>(), AnkoLogger{
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecoViewHolder {

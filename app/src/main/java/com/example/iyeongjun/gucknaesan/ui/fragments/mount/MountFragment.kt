@@ -12,7 +12,6 @@ import com.example.iyeongjun.gucknaesan.adapter.recycler.MountAdapter
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_mount.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 import javax.inject.Inject
 
 

@@ -11,12 +11,9 @@ import android.view.ViewGroup
 import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.adapter.recycler.ClubAdapter
 import com.example.iyeongjun.gucknaesan.adapter.recycler.ProvinceAdapter
-import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
-import com.example.iyeongjun.gucknaesan.ui.fragments.mount.MountViewModel
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_club.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 import javax.inject.Inject
 
 class ClubFragment : DaggerFragment(),AnkoLogger {

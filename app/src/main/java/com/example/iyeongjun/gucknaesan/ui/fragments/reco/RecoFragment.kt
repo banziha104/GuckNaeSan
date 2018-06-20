@@ -9,11 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.adapter.recycler.RecoAdapter
-import com.example.iyeongjun.gucknaesan.ex.random
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_reco.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 import javax.inject.Inject
 
 

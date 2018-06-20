@@ -4,8 +4,6 @@ import com.example.iyeongjun.gucknaesan.api.model.gov.GovModel
 import com.example.iyeongjun.gucknaesan.api.model.govOneItem.OneGovModel
 import com.example.iyeongjun.gucknaesan.const.AUTH_KEY
 import io.reactivex.Observable
-import okhttp3.ResponseBody
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
