@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.bumptech.glide.Glide
 import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.api.model.club.Item
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
@@ -35,7 +34,7 @@ class ClubAdapter(val data : List<Item>,val context: Context) : RecyclerView.Ada
             }
         }
     }
-    
+
     class ClubViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val txtTitle = view.findViewById<TextView>(R.id.txtClubTitle)
         val txtDes = view.findViewById<TextView>(R.id.txtClubDes)

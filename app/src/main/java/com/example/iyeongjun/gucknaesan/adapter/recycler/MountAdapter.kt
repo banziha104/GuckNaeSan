@@ -13,7 +13,6 @@ import com.example.iyeongjun.gucknaesan.api.model.mount.Item
 import com.example.iyeongjun.gucknaesan.ex.getLimitedString
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
 import com.example.iyeongjun.gucknaesan.ui.activities.detail.DetailActivity
-import com.jakewharton.rxbinding2.view.clicks
 import io.reactivex.subjects.BehaviorSubject
 import org.jetbrains.anko.startActivity
 

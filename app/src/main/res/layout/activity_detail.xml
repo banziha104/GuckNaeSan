@@ -27,37 +27,35 @@
                     android:id="@+id/imgDetail"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:tint="@color/colorBlackTint"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@android:color/holo_blue_bright" />
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/segment"
-                    tools:layout_editor_absoluteY="300dp" />
-
-                <TextView
+                <com.joanzapata.iconify.widget.IconTextView
                     android:id="@+id/txtDetailTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
                     android:text="TextView"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
             </android.support.constraint.ConstraintLayout>
 
-            <TextView
+            <com.joanzapata.iconify.widget.IconTextView
                 android:id="@+id/txtDetailDes"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/browser_actions_text_color" />
 
             <fragment
                 android:id="@+id/mapDetail"
@@ -70,7 +68,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnDetail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Button"

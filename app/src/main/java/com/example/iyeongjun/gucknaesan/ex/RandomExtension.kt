@@ -3,7 +3,6 @@ package com.example.iyeongjun.gucknaesan.ex
 import com.example.iyeongjun.gucknaesan.api.model.mount.Item
 import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
 import java.util.*
-import kotlin.collections.ArrayList
 
 fun ClosedRange<Int>.random() = Random().nextInt(endInclusive - start) +  start
 

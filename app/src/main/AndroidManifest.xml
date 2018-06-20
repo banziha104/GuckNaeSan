@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activities.detail.DetailActivity" />
-        <activity android:name=".ui.activities.list.ListActivity"></activity>
+        <activity android:name=".ui.activities.cal.CalActivity"></activity>
     </application>
 
 </manifest>

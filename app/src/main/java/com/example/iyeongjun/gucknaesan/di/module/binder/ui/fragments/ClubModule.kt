@@ -7,7 +7,6 @@ import com.example.iyeongjun.gucknaesan.ui.fragments.club.ClubViewModelFactory
 import dagger.Module
 import dagger.Provides
 import io.reactivex.subjects.BehaviorSubject
-import javax.inject.Singleton
 
 @Module
 class ClubModule{
