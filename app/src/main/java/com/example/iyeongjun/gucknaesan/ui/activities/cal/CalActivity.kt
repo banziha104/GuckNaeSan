@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.adapter.recycler.CalRecyclerAdapter
+import com.example.iyeongjun.gucknaesan.ex.random
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_cal.*
 import org.jetbrains.anko.AnkoLogger
@@ -16,6 +17,7 @@ class CalActivity : DaggerAppCompatActivity(), AnkoLogger {
 
     @Inject lateinit var  calViewModelFactory: CalViewModelFactory
     lateinit var calViewModel: CalViewModel
+    lateinit var adapter : CalRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,12 +26,15 @@ class CalActivity : DaggerAppCompatActivity(), AnkoLogger {
         bind()
     }
     fun bind(){
+        adapter = CalRecyclerAdapter(calViewModel.item)
         calRecyclerView.apply {
-            adapter = CalRecyclerAdapter(calViewModel.clubModel.items)
+            adapter = this@CalActivity.adapter
             layoutManager = LinearLayoutManager(this@CalActivity)
         }
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            info("$view / $year / $month / $dayOfMonth")
+            adapter = CalRecyclerAdapter(calViewModel.item.random())
+            adapter.notifyDataSetChanged()
+            calRecyclerView.adapter.notifyDataSetChanged()
         }
     }
 }
