@@ -15,26 +15,30 @@ import javax.inject.Inject
 
 class CalActivity : DaggerAppCompatActivity(), AnkoLogger {
 
-    @Inject lateinit var  calViewModelFactory: CalViewModelFactory
+    @Inject
+    lateinit var calViewModelFactory: CalViewModelFactory
     lateinit var calViewModel: CalViewModel
-    lateinit var adapter : CalRecyclerAdapter
+    lateinit var adapter: CalRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cal)
-        calViewModel = ViewModelProviders.of(this,calViewModelFactory)[CalViewModel::class.java]
+        calViewModel = ViewModelProviders.of(this, calViewModelFactory)[CalViewModel::class.java]
         bind()
     }
-    fun bind(){
-        adapter = CalRecyclerAdapter(calViewModel.item)
+
+    fun bind() {
+        adapter = CalRecyclerAdapter(calViewModel.item,this)
         calRecyclerView.apply {
             adapter = this@CalActivity.adapter
             layoutManager = LinearLayoutManager(this@CalActivity)
         }
-        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            adapter = CalRecyclerAdapter(calViewModel.item.random())
-            adapter.notifyDataSetChanged()
-            calRecyclerView.adapter.notifyDataSetChanged()
+        calendarView.apply {
+            setOnDateChangeListener { view, year, month, dayOfMonth ->
+                adapter = CalRecyclerAdapter(calViewModel.item.random(),this@CalActivity)
+                calRecyclerView.adapter = adapter
+                calRecyclerView.adapter.notifyDataSetChanged()
+            }
         }
     }
 }

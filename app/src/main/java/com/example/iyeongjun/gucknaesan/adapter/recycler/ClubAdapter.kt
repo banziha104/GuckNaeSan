@@ -27,7 +27,7 @@ class ClubAdapter(val data : List<Item>,val context: Context) : RecyclerView.Ada
             data[position].let {
                 txtTitle.text = it.clubName
                 txtDes.text = it.cintroduce
-                txtLocation.text = it.adress
+                txtLocation.text = ""
                 GlideApp.with(context)
                         .load(it.imgUrl)
                         .into(imgClub)
