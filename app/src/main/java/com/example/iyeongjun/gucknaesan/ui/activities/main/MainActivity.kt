@@ -14,7 +14,8 @@ import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity(), AnkoLogger {
     @Inject lateinit var viewModel: MainViewModelFactory
-    val tabName = arrayOf("추천","명산","산악회")
+    val tabNames = arrayOf("추천","명산","산악회")
+    val tabImages = arrayOf(R.drawable.item_reco,R.drawable.item_mount,R.drawable.item_club)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,13 +24,8 @@ class MainActivity : DaggerAppCompatActivity(), AnkoLogger {
 
     private fun bind(){
         mainViewpager.adapter = MainPagerAdapter(supportFragmentManager, listOf(RecoFragment(),MountFragment(),ClubFragment()))
-//        for (i in 0..2) {
-//            if (i == 0) tab.addTab(tab.newTab().setIcon(tabClicekdImages[i]).setText(tabNames[i]))
-//            else tab.addTab(tab.newTab().setIcon(tabDefaultImages[i]).setText(tabNames[i]))
-//        }
-        for (i in 0..2){
-            tab.addTab(tab.newTab().setText(tabName[i]))
-        }
+        for (i in 0..2) tab.addTab(tab.newTab().setIcon(tabImages[i]).setText(tabNames[i]))
+
         mainViewpager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab))
         tab.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(mainViewpager))
         tab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {

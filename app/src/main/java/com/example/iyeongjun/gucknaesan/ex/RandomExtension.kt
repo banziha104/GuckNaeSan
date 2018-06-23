@@ -36,15 +36,16 @@ fun List<com.example.iyeongjun.gucknaesan.api.model.club.Item>.random(): List<co
     while (count < 12) {
         var canInsert = true
         var num = (0..size).random()
-        for (i in randomNum) if (i == num) canInsert = false
+        for (i in randomNum){
+            if (i == num) canInsert = false
+        }
         if (canInsert) {
             randomNum.add(num)
             count++
-            Log.d("temp","$num")
         }
-        for ( i in randomNum){
-            tempData.add(this[i])
-        }
+    }
+    for ( i in randomNum){
+        tempData.add(this[i])
     }
     return tempData
 }

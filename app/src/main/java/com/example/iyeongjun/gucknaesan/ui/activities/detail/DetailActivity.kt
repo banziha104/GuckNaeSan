@@ -30,7 +30,10 @@ class DetailActivity : DaggerAppCompatActivity(), AnkoLogger {
     }
     fun bind(){
         viewModel.driver.subscribe{ item ->
-            txtDetailDes.text = "{fa-heart-o} ${item.description}"
+            txtDetailSubTitle.text = "   {fa-tag} 이름 : ${item.mtName}"
+            txtDetailHeight.text = "   {fa-arrow-up} 높이 : ${item.height} "
+            txtDetailAddress.text = "   {fa-map-marker} 위치 : ${item.address}"
+            txtDetailDes.text = "${item.description}"
             txtDetailTitle.text = item.mtName
             if(!this.isFinishing){
                 GlideApp.with(this)
