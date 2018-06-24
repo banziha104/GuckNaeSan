@@ -14,8 +14,8 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key">
-        </meta-data>
+            android:value="@string/google_maps_key"></meta-data>
+
         <activity android:name=".ui.activities.main.MainActivity" />
         <activity android:name=".ui.activities.splash.SplashActivity">
             <intent-filter>
@@ -25,7 +25,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activities.detail.DetailActivity" />
-        <activity android:name=".ui.activities.cal.CalActivity"></activity>
+        <activity android:name=".ui.activities.cal.CalActivity" />
+        <activity android:name=".ui.activities.club.ClubDetailActivity"></activity>
     </application>
 
 </manifest>
