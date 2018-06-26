@@ -39,11 +39,13 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
                     startActivity<MainActivity>()
                 }, {
                     it.printStackTrace()
+                    startActivity<MainActivity>()
                 })
 
         clubDriver.onNext(viewModel.clubModel)
         info(viewModel.clubModel)
         mountDriver.onNext(viewModel.model)
+        startActivity<MainActivity>()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -55,14 +55,14 @@
                     android:id="@+id/txtCarClubTitle"
                     android:layout_width="118dp"
                     android:layout_height="19dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="28dp"
                     android:text="TextView"
                     android:textColor="@color/browser_actions_text_color"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imgClub"
+                    app:layout_constraintStart_toEndOf="@+id/imgCarClub"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
@@ -93,16 +93,16 @@
                     android:layout_height="53dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="TextView"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.49"
-                    app:layout_constraintStart_toEndOf="@+id/imgClub"
-                    app:layout_constraintTop_toBottomOf="@+id/txtClubTitle" />
+                    app:layout_constraintStart_toEndOf="@+id/imgCarClub"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCarClubTitle" />
 
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.CardView>
