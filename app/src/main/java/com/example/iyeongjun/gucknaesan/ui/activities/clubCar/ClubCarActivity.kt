@@ -66,6 +66,7 @@ class ClubCarActivity : DaggerAppCompatActivity() , AnkoLogger{
             }else{
                 toast("날짜와 산을 선택해주세요")
             }
+            Log.d("dd","dd")
         }
     }
 }
