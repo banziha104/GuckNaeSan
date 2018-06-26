@@ -1,7 +1,8 @@
 package com.example.iyeongjun.gucknaesan.di.module.binder.ui.activities
 
-import android.app.ListActivity
 import com.example.iyeongjun.gucknaesan.ui.activities.cal.CalActivity
+import com.example.iyeongjun.gucknaesan.ui.activities.club.ClubDetailActivity
+import com.example.iyeongjun.gucknaesan.ui.activities.clubCar.ClubCarActivity
 import com.example.iyeongjun.gucknaesan.ui.activities.detail.DetailActivity
 import com.example.iyeongjun.gucknaesan.ui.activities.main.MainActivity
 import com.example.iyeongjun.gucknaesan.ui.activities.splash.SplashActivity
@@ -21,4 +22,10 @@ abstract class ActivityBinder{
 
     @ContributesAndroidInjector(modules = arrayOf(DetailModule::class))
     abstract fun bindDetailActivity() : DetailActivity
+
+    @ContributesAndroidInjector(modules = arrayOf(ClubDetailModule::class))
+    abstract fun bindClubDetail() : ClubDetailActivity
+
+    @ContributesAndroidInjector(modules = arrayOf(ClubCalModule::class))
+    abstract fun bindClubCarActivity() : ClubCarActivity
 }

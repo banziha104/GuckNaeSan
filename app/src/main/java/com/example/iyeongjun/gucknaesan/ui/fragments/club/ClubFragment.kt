@@ -20,6 +20,7 @@ class ClubFragment : DaggerFragment(),AnkoLogger {
 
     @Inject lateinit var viewModelFactory: ClubViewModelFactory
     lateinit var viewModel : ClubViewModel
+    val tempContext = this
     private val VERTICAL = 1
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +40,7 @@ class ClubFragment : DaggerFragment(),AnkoLogger {
             addItemDecoration(DividerItemDecoration(activity,VERTICAL))
         }
         clubRecyclerview.apply{
-            adapter = ClubAdapter(viewModel.model.items,viewModel.context)
+            adapter = ClubAdapter(viewModel.model.items,viewModel.context,tempContext,viewModel.driver)
             layoutManager = LinearLayoutManager(viewModel.context)
         }
     }

@@ -1,6 +1,7 @@
 package com.example.iyeongjun.gucknaesan.adapter.recycler
 
 import android.content.Context
+import android.support.v4.app.Fragment
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -14,8 +15,9 @@ import com.example.iyeongjun.gucknaesan.ui.activities.detail.DetailActivity
 import io.reactivex.subjects.BehaviorSubject
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.startActivity
+import java.net.URL
 
-class RecoAdapter(val items : ArrayList<Item>,val context : Context,val sendDriver : BehaviorSubject<Item>) : RecyclerView.Adapter<RecoAdapter.RecoViewHolder>(), AnkoLogger{
+class RecoAdapter(val items : ArrayList<Item>, val context : Context, val fragment: Fragment, val sendDriver : BehaviorSubject<Item>) : RecyclerView.Adapter<RecoAdapter.RecoViewHolder>(), AnkoLogger{
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecoViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_reco, parent, false)
         return RecoViewHolder(view)
@@ -32,8 +34,8 @@ class RecoAdapter(val items : ArrayList<Item>,val context : Context,val sendDriv
                 txtTitle.text = it.mtName
                 txtHeight.text = "${it.height}m"
                 txtAddress.text = it.address
-                        GlideApp.with(context)
-                        .load(items[position].imgUrl)
+                        GlideApp.with(fragment)
+                        .load(URL(it.imgUrl))
                         .into(imgView)
             }
         }

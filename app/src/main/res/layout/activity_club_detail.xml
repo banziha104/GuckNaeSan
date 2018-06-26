@@ -1,9 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activities.club.ClubDetailActivity">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ui.activities.detail.DetailActivity">
+
+<ImageView
+    android:id="@+id/imageView5"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:scaleType="fitXY"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/banner" />
+
+<ScrollView
+    android:id="@+id/scrollView2"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toTopOf="@+id/btnClubDetail"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <ImageView
+                android:id="@+id/imgClubDetail"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:tint="@color/colorBlackTint"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:color/holo_blue_bright" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                android:id="@+id/txtClubDetailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:text="TextView"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/div_con"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="416dp" />
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/txtClubDetailSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/browser_actions_text_color" />
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/txtClubDetailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/browser_actions_text_color" />
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/txtClubDetailStartPoint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/browser_actions_text_color" />
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/txtClubDetailCafe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autoLink="all"
+            android:textColor="@color/browser_actions_text_color" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/div_des"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="416dp" />
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/txtClubDetailDes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="TextView"
+            android:textColor="@color/browser_actions_text_color" />
+
+
+    </LinearLayout>
+</ScrollView>
+
+<Button
+    android:id="@+id/btnClubDetail"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_detail"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

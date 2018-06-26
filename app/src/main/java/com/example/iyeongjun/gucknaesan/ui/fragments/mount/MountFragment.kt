@@ -18,6 +18,7 @@ import javax.inject.Inject
 class MountFragment : DaggerFragment(), AnkoLogger {
     @Inject lateinit var mountViewModelFactory: MountViewModelFactory
     internal lateinit var viewModel: MountViewModel
+    val temp = this
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_mount, container, false)
@@ -32,7 +33,7 @@ class MountFragment : DaggerFragment(), AnkoLogger {
     fun bind() {
         viewModel.driver.subscribe {
             mountRecyclerView.apply {
-                adapter = MountAdapter(viewModel.mountModel,viewModel.context,viewModel.sendDriver)
+                adapter = MountAdapter(viewModel.mountModel,viewModel.context,temp,viewModel.sendDriver)
                 layoutManager = LinearLayoutManager(viewModel.context)
             }
         }

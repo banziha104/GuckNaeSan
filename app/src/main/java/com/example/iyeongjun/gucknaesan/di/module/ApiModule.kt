@@ -17,6 +17,7 @@ import javax.inject.Singleton
 class ApiModule{
 
     @Singleton
+
     @Provides
     fun provideGovApi(rxAdapter : CallAdapter.Factory,
                       gsonConverter: Converter.Factory,
@@ -28,14 +29,15 @@ class ApiModule{
             .addConverterFactory(gsonConverter)
             .build()
             .create(GovApi::class.java)
+
     @Provides
     @Singleton
-    fun provideCallAdapterFactory(): CallAdapter.Factory
+    fun provideCallAdapterFactory(): CallAdapter.Factory // RxConvererter
             = RxJava2CallAdapterFactory.createAsync()
 
     @Provides
     @Singleton
-    fun provideConverterFactory(): Converter.Factory
+    fun provideConverterFactory(): Converter.Factory // GsonFactory
             = GsonConverterFactory.create()
 
     @Provides
