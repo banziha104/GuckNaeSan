@@ -10,12 +10,11 @@ import com.example.iyeongjun.gucknaesan.ui.fragments.reco.RecoFragment
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.AnkoLogger
-import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity(), AnkoLogger {
-    @Inject lateinit var viewModel: MainViewModelFactory
     val tabNames = arrayOf("추천","명산","산악회")
     val tabImages = arrayOf(R.drawable.item_reco,R.drawable.item_mount,R.drawable.item_club)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,5 +38,9 @@ class MainActivity : DaggerAppCompatActivity(), AnkoLogger {
 
             }
         })
+    }
+
+    override fun onBackPressed() {
+
     }
 }

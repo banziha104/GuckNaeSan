@@ -19,22 +19,27 @@ class RecoFragment : DaggerFragment() ,AnkoLogger {
 
     @Inject lateinit var recoViewModelFactory: RecoViewModelFactory
     lateinit var viewModel: RecoViewModel
+    val temp = this
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_reco, container, false)
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
         viewModel = ViewModelProviders.of(this,recoViewModelFactory)[RecoViewModel::class.java]
         bind()
+    }
+    override fun onResume() {
+        super.onResume()
+
     }
 
     private fun bind(){
         viewModel.driver.subscribe {
             recoRecyclerView.apply {
-                adapter = RecoAdapter(viewModel.mountModel,viewModel.context,viewModel.sendDriver)
+                adapter = RecoAdapter(viewModel.mountModel,viewModel.context,this@RecoFragment,viewModel.sendDriver)
                 layoutManager = GridLayoutManager(viewModel.context,2)
             }
         }

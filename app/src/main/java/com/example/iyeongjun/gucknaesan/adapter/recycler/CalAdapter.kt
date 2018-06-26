@@ -1,6 +1,6 @@
 package com.example.iyeongjun.gucknaesan.adapter.recycler
 
-import android.content.Context
+import android.app.Activity
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.api.model.club.Item
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
 
-class CalRecyclerAdapter(val data : List<Item>,val context: Context) : RecyclerView.Adapter<CalRecyclerAdapter.CalViewHolder>(){
+class CalAdapter(val data : List<Item>, val context: Activity) : RecyclerView.Adapter<CalAdapter.CalViewHolder>(){
    init {
        Log.d("a","$data")
    }

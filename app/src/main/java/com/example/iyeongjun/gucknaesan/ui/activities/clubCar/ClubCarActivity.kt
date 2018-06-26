@@ -1,57 +1,50 @@
-package com.example.iyeongjun.gucknaesan.ui.activities.cal
+package com.example.iyeongjun.gucknaesan.ui.activities.clubCar
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.Toast
 import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.adapter.recycler.CalAdapter
-import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
+import com.example.iyeongjun.gucknaesan.adapter.recycler.ClubCalAdapter
 import com.example.iyeongjun.gucknaesan.ex.plusAssign
 import com.example.iyeongjun.gucknaesan.ex.random
 import com.example.iyeongjun.gucknaesan.rx.AutoClearedDisposable
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_cal.*
+import kotlinx.android.synthetic.main.activity_club_car.*
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 import javax.inject.Inject
 
+class ClubCarActivity : DaggerAppCompatActivity() , AnkoLogger{
+    @Inject lateinit var clubCarViewModelFactory: ClubCarViewModelFactory
+    lateinit var viewModel: ClubCarViewModel
+    lateinit var adapter : ClubCalAdapter
 
-class CalActivity : DaggerAppCompatActivity(), AnkoLogger {
-
-
-    @Inject lateinit var calViewModelFactory: CalViewModelFactory
-    @Inject lateinit var mountModel : MountModel
-    lateinit var calViewModel: CalViewModel
-    lateinit var adapter: CalAdapter
     val disposable = AutoClearedDisposable(this)
     val viewDisposables = AutoClearedDisposable(lifecycleOwner = this,alwaysClearOnStop = false)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cal)
-        calViewModel = ViewModelProviders.of(this, calViewModelFactory)[CalViewModel::class.java]
+        setContentView(R.layout.activity_club_car)
+
+        viewModel = ViewModelProviders.of(this,clubCarViewModelFactory)[ClubCarViewModel::class.java]
         lifecycle += disposable
         lifecycle += viewDisposables
-        bind()
     }
-
-    fun bind() {
-        adapter = CalAdapter(calViewModel.item,this)
-
-        calRecyclerView.apply {
-            adapter = this@CalActivity.adapter
-            layoutManager = LinearLayoutManager(this@CalActivity)
+    fun bind(){
+        var adapter = ClubCalAdapter(viewModel.model.random(),this@ClubCarActivity)
+        clubCarRecyclerview.apply {
+            this.adapter = adapter
+            layoutManager = LinearLayoutManager(this@ClubCarActivity)
         }
-
-        calendarView.apply {
+        clubCalendarView.apply {
             setOnDateChangeListener { view, year, month, dayOfMonth ->
-                adapter = CalAdapter(calViewModel.item.random(),this@CalActivity)
+                info(dayOfMonth)
+                adapter = ClubCalAdapter(viewModel.model.random(),this@ClubCarActivity)
                 calRecyclerView.adapter = adapter
                 calRecyclerView.adapter.notifyDataSetChanged()
             }
         }
-        btnCal.setOnClickListener {
-            Toast.makeText(this,"참여가 완료 되었습니다!",Toast.LENGTH_LONG)
-        }
+
     }
 }

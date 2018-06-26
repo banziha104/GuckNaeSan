@@ -7,7 +7,7 @@
     tools:layout_editor_absoluteY="81dp">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/clubContainer"
+        android:id="@+id/carClubContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -42,7 +42,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/imgClub"
+                    android:id="@+id/imgCarClub"
                     android:layout_width="93dp"
                     android:layout_height="0dp"
                     android:scaleType="centerCrop"
@@ -52,7 +52,7 @@
                     app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
 
                 <TextView
-                    android:id="@+id/txtClubTitle"
+                    android:id="@+id/txtCarClubTitle"
                     android:layout_width="118dp"
                     android:layout_height="19dp"
                     android:layout_marginLeft="16dp"
@@ -77,7 +77,7 @@
                     app:srcCompat="@drawable/item_etc" />
 
                 <TextView
-                    android:id="@+id/txtClubLocation"
+                    android:id="@+id/txtCarClubLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -88,7 +88,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/txtClubDes"
+                    android:id="@+id/txtCarClubDes"
                     android:layout_width="0dp"
                     android:layout_height="53dp"
                     android:layout_marginBottom="8dp"

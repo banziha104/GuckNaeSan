@@ -2,6 +2,7 @@ package com.example.iyeongjun.gucknaesan.adapter.recycler
 
 import android.content.Context
 import android.support.constraint.ConstraintLayout
+import android.support.v4.app.Fragment
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,7 @@ import com.example.iyeongjun.gucknaesan.ui.activities.detail.DetailActivity
 import io.reactivex.subjects.BehaviorSubject
 import org.jetbrains.anko.startActivity
 
-class MountAdapter(val items : List<Item>, val context : Context,val sendDriver : BehaviorSubject<Item>
+class MountAdapter(val items : List<Item>, val context : Context, val fragment: Fragment, val sendDriver : BehaviorSubject<Item>
                    ) : RecyclerView.Adapter<MountAdapter.MountViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MountViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_mount, parent, false)
@@ -35,7 +36,7 @@ class MountAdapter(val items : List<Item>, val context : Context,val sendDriver 
                 txtDes.setText(it.description.getLimitedString(180))
                 txtHeight.setText("${it.height}m")
                 GlideApp
-                        .with(context)
+                        .with(fragment)
                         .load(items[position].imgUrl)
                         .into(imgMount)
             }
