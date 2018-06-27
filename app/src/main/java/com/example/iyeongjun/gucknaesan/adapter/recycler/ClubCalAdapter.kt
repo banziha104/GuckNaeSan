@@ -57,7 +57,7 @@ class ClubCalAdapter(val data : List<Item>, val context : Context,val  driver : 
         fun bind(){
             container.setOnClickListener {
                 driver.onNext(item!!)
-                Toast.makeText(context,"선택되었습니다",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"${item?.mtName}이 선택되었습니다",Toast.LENGTH_SHORT).show()
             }
         }
     }

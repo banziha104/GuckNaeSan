@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_club_car.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
+import java.util.*
 import javax.inject.Inject
 
 class ClubCarActivity : DaggerAppCompatActivity() , AnkoLogger{
@@ -62,11 +63,10 @@ class ClubCarActivity : DaggerAppCompatActivity() , AnkoLogger{
         }
         btnClubCal.setOnClickListener { view ->
             if(temp != null && day != null) {
-                toast("${month}월 ${day}일에 ${temp?.mtName}에 예약되었습니다.")
+                toast("${(month!!+1)}월 ${day}일에 ${temp?.mtName}에 예약되었습니다.")
             }else{
                 toast("날짜와 산을 선택해주세요")
             }
-            Log.d("dd","dd")
         }
     }
 }
