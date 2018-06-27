@@ -121,13 +121,13 @@ tools:context=".ui.activities.detail.DetailActivity">
     </LinearLayout>
 </ScrollView>
 
-<Button
-    android:id="@+id/btnClubDetail"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:background="@drawable/btn_detail"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/btnClubDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_club_detail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
