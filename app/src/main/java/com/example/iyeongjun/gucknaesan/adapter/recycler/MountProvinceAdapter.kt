@@ -14,7 +14,6 @@ class MountProvinceAdapter(val data : List<String>, val clickDriver : BehaviorSu
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_province, parent, false)
         return ProvinceViewHolder(view)
     }
-
     override fun getItemCount(): Int {
         return data.size
     }
@@ -25,7 +24,6 @@ class MountProvinceAdapter(val data : List<String>, val clickDriver : BehaviorSu
                 txtTitle.text = it
             }
         }
-
     }
 
     inner class ProvinceViewHolder(view : View) : RecyclerView.ViewHolder(view){

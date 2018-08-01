@@ -10,15 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import com.example.iyeongjun.gucknaesan.R
-import com.example.iyeongjun.gucknaesan.adapter.recycler.ClubAdapter
 import com.example.iyeongjun.gucknaesan.adapter.recycler.MountAdapter
-import com.example.iyeongjun.gucknaesan.adapter.recycler.ProvinceAdapter
+import com.example.iyeongjun.gucknaesan.adapter.recycler.MountProvinceAdapter
 import com.example.iyeongjun.gucknaesan.ex.getProvince
 import dagger.android.support.DaggerFragment
-import kotlinx.android.synthetic.main.fragment_club.*
 import kotlinx.android.synthetic.main.fragment_mount.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 import javax.inject.Inject
 
 
@@ -77,7 +74,7 @@ class MountFragment : DaggerFragment(), AnkoLogger {
             it.printStackTrace()
         })
         mountProvinceRecyclerview.apply {
-            adapter = ProvinceAdapter(viewModel.province, viewModel.clickDriver)
+            adapter = MountProvinceAdapter(viewModel.province, viewModel.clickDriver)
             layoutManager = LinearLayoutManager(viewModel.context)
             addItemDecoration(DividerItemDecoration(activity, VERTICAL))
         }

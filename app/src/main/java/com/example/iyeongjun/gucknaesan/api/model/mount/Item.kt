@@ -7,9 +7,8 @@ data class Item(
     @SerializedName("height") var height: Double,
     @SerializedName("description") var description: String,
     @SerializedName("imgUrl") var imgUrl : String,
-    @SerializedName("lat") var lat : Double,
-    @SerializedName("lon") var lon : Double,
+    @SerializedName("lon") var lat : Double,
+    @SerializedName("lan") var lon : Double,
     @SerializedName("address") var address : String,
     @SerializedName("province") var province : String
-
 )
