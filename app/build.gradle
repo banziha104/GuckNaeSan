@@ -67,4 +67,7 @@ dependencies {
     implementation 'com.android.support:cardview-v7:27.1.1'
     implementation 'com.google.android.gms:play-services-maps:15.0.1'
     implementation 'com.google.android.gms:play-services-location:15.0.1'
+
+    implementation 'com.merhold.extensiblepageindicator:extensiblepageindicator:1.0.1'
+    implementation 'com.yqritc:android-scalablevideoview:1.0.4'
 }

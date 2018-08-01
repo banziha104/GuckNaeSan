@@ -13,7 +13,6 @@ import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.api.model.club.Item
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
 import com.example.iyeongjun.gucknaesan.ui.activities.club.ClubDetailActivity
-import com.google.android.gms.maps.SupportMapFragment
 import io.reactivex.subjects.BehaviorSubject
 import org.jetbrains.anko.startActivity
 

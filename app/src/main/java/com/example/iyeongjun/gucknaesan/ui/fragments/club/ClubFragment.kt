@@ -68,6 +68,5 @@ class ClubFragment : DaggerFragment(),AnkoLogger {
             layoutManager = LinearLayoutManager(viewModel.context)
             addItemDecoration(DividerItemDecoration(activity,VERTICAL))
         }
-
     }
 }

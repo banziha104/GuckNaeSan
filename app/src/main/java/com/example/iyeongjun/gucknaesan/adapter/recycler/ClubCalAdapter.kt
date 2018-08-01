@@ -2,7 +2,6 @@ package com.example.iyeongjun.gucknaesan.adapter.recycler
 
 import android.content.Context
 import android.support.constraint.ConstraintLayout
-import android.support.v4.app.Fragment
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,7 +12,6 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.api.model.mount.Item
-import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
 import io.reactivex.subjects.PublishSubject
 

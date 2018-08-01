@@ -4,8 +4,8 @@ import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.text.Html
 import com.example.iyeongjun.gucknaesan.R
+import com.example.iyeongjun.gucknaesan.const.DataDriver.clubToCal
 import com.example.iyeongjun.gucknaesan.ex.plusAssign
 import com.example.iyeongjun.gucknaesan.rx.AutoClearedDisposable
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
@@ -19,7 +19,6 @@ import javax.inject.Inject
 class ClubDetailActivity : DaggerAppCompatActivity(),AnkoLogger {
     @Inject lateinit var viewModelFactory: ClubDetailViewModelFactory
     lateinit var viewModel : ClubDetailViewModel
-
     val disposable = AutoClearedDisposable(this)
     val viewDisposables = AutoClearedDisposable(lifecycleOwner = this,alwaysClearOnStop = false)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +32,7 @@ class ClubDetailActivity : DaggerAppCompatActivity(),AnkoLogger {
 
     fun bind(){
         viewDisposables += viewModel.driver.subscribe{
+            clubToCal.onNext(it)
             txtClubDetailAddress.text = "   {fa-map-marker}  활동지  :  ${it.province}"
             txtClubDetailCafe.text = "   {fa-coffee}  카페주소  :  http://${it.cafeUrl}"
             txtClubDetailStartPoint.text = "   {fa-flag}  시작점  :  ${it.startPoint}"

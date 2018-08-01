@@ -13,7 +13,6 @@ import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.api.model.club.Item
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
 import com.jakewharton.rxbinding2.view.clicks
-import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
 import org.jetbrains.anko.toast
 

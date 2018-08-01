@@ -44,7 +44,7 @@ class MountAdapter(val items : List<Item>,
             items[position].let {
                 item = it
                 txtTitle.setText(it.mtName)
-                txtDes.setText(it.description.getLimitedString(180))
+                txtDes.setText(it.description)
                 txtHeight.setText("${it.height}m")
                 GlideApp
                         .with(fragment)
