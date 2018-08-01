@@ -17,7 +17,8 @@ import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
 import org.jetbrains.anko.toast
 
-class CalAdapter(val data : List<Item>, val context: Activity, val driver : PublishSubject<Item>) : RecyclerView.Adapter<CalAdapter.CalViewHolder>(){
+class
+CalAdapter(val data : List<Item>, val context: Activity, val driver : PublishSubject<Item>) : RecyclerView.Adapter<CalAdapter.CalViewHolder>(){
    init {
        Log.d("a","$data")
    }
@@ -58,6 +59,7 @@ class CalAdapter(val data : List<Item>, val context: Activity, val driver : Publ
                 context.toast("${item?.clubName} 이 선택되었습니다")
                 driver.onNext(item!!)
             }
+
         }
     }
 }

@@ -21,27 +21,33 @@ import javax.inject.Inject
 
 class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionController.CallBack {
 
-
-    @Inject lateinit var viewModelFactory: SplashViewModelFactory
-    @Inject lateinit var govDriver: BehaviorSubject<GovModel>
-    @Inject lateinit var mountDriver : BehaviorSubject<MountModel>
-    @Inject lateinit var clubDriver  : BehaviorSubject<ClubModel>
+    @Inject
+    lateinit var viewModelFactory: SplashViewModelFactory
+    @Inject
+    lateinit var govDriver: BehaviorSubject<GovModel>
+    @Inject
+    lateinit var mountDriver: BehaviorSubject<MountModel>
+    @Inject
+    lateinit var clubDriver: BehaviorSubject<ClubModel>
     private lateinit var viewModel: SplashViewModel
     val disposable = AutoClearedDisposable(this)
-    val viewDisposables = AutoClearedDisposable(lifecycleOwner = this,alwaysClearOnStop = false)
+    val viewDisposables = AutoClearedDisposable(lifecycleOwner = this, alwaysClearOnStop = false)
 
     override fun init() {
         lifecycle += viewDisposables
         viewModel = ViewModelProviders.of(this, viewModelFactory)[SplashViewModel::class.java]
         viewDisposables += viewModel.govModel
-                .subscribe( {
+                .subscribe({
                     govDriver.onNext(it)
-                    startActivity<MainActivity>()
                 }, {
                     it.printStackTrace()
-                    startActivity<MainActivity>()
                 })
-
+        viewDisposables += viewModel.requestTourApi
+                .subscribe({
+                    info { "시작하자 ${it.body.items.size}" }
+                }, {
+                    it.printStackTrace()
+                })
         clubDriver.onNext(viewModel.clubModel)
         info(viewModel.clubModel)
         mountDriver.onNext(viewModel.model)
@@ -53,5 +59,4 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
         setContentView(R.layout.activity_splash)
         PermissionController(this, arrayOf(Manifest.permission.INTERNET)).checkVersion()
     }
-
 }

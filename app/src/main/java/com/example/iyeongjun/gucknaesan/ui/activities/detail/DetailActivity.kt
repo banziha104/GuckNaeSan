@@ -2,7 +2,9 @@ package com.example.iyeongjun.gucknaesan.ui.activities.detail
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import com.example.iyeongjun.gucknaesan.R
+import com.example.iyeongjun.gucknaesan.adapter.recycler.DetailAdapter
 import com.example.iyeongjun.gucknaesan.ex.plusAssign
 import com.example.iyeongjun.gucknaesan.rx.AutoClearedDisposable
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
@@ -15,6 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_detail.*
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 
@@ -32,7 +35,6 @@ class DetailActivity : DaggerAppCompatActivity(), AnkoLogger {
         viewModel = ViewModelProviders.of(this,viewModelFactory)[DetailViewModel::class.java]
         lifecycle += disposable
         lifecycle += viewDisposables
-
         bind()
     }
     fun bind(){
@@ -59,5 +61,15 @@ class DetailActivity : DaggerAppCompatActivity(), AnkoLogger {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,11f))
             }
         }
+
+        viewDisposables += viewModel.tourDriver
+                .subscribe({
+                    detailRecyclerView.apply {
+                        adapter = DetailAdapter(it,this@DetailActivity)
+                        layoutManager = LinearLayoutManager(this@DetailActivity)
+                    }
+                },{
+                    it.printStackTrace()
+                })
     }
 }

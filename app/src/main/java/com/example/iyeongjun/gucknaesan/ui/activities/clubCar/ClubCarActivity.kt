@@ -1,6 +1,8 @@
 package com.example.iyeongjun.gucknaesan.ui.activities.clubCar
 
 import android.arch.lifecycle.ViewModelProviders
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
@@ -13,6 +15,7 @@ import com.example.iyeongjun.gucknaesan.ex.plusAssign
 import com.example.iyeongjun.gucknaesan.ex.random
 import com.example.iyeongjun.gucknaesan.ex.random2
 import com.example.iyeongjun.gucknaesan.rx.AutoClearedDisposable
+import com.example.iyeongjun.gucknaesan.ui.dialogs.ConfirmDialog
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
@@ -63,7 +66,11 @@ class ClubCarActivity : DaggerAppCompatActivity() , AnkoLogger{
         }
         btnClubCal.setOnClickListener { view ->
             if(temp != null && day != null) {
+                val dialog = ConfirmDialog(this)
+                dialog!!.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                dialog!!.show()
                 toast("${(month!!+1)}월 ${day}일에 ${temp?.mtName}에 예약되었습니다.")
+
             }else{
                 toast("날짜와 산을 선택해주세요")
             }

@@ -9,5 +9,7 @@ data class Item(
     @SerializedName("imgUrl") var imgUrl : String,
     @SerializedName("lat") var lat : Double,
     @SerializedName("lon") var lon : Double,
-    @SerializedName("address") var address : String
+    @SerializedName("address") var address : String,
+    @SerializedName("province") var province : String
+
 )

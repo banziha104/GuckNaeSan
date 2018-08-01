@@ -8,16 +8,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.example.iyeongjun.gucknaesan.R
+import com.example.iyeongjun.gucknaesan.api.arch.TourApi
 import com.example.iyeongjun.gucknaesan.api.model.mount.Item
+import com.example.iyeongjun.gucknaesan.api.model.tour.TourModel
 import com.example.iyeongjun.gucknaesan.ex.getLimitedString
 import com.example.iyeongjun.gucknaesan.ui.GlideApp
 import com.example.iyeongjun.gucknaesan.ui.activities.detail.DetailActivity
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import org.jetbrains.anko.startActivity
 
-class MountAdapter(val items : List<Item>, val context : Context, val fragment: Fragment, val sendDriver : BehaviorSubject<Item>
+class MountAdapter(val items : List<Item>,
+                   val context : Context,
+                   val fragment: Fragment,
+                   val sendDriver : BehaviorSubject<Item>,
+                   val tourApi: TourApi,
+                   val tourDriver : BehaviorSubject<TourModel>,
+                   val progressBar : ProgressBar
                    ) : RecyclerView.Adapter<MountAdapter.MountViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MountViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_mount, parent, false)
@@ -54,7 +65,19 @@ class MountAdapter(val items : List<Item>, val context : Context, val fragment: 
         fun bind(){
             container.setOnClickListener {
                 sendDriver.onNext(item!!)
-                context.startActivity<DetailActivity>()
+                tourApi.getTourData(lon = item?.lon!!, lat = item?.lat!!)
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .doOnComplete {
+                            progressBar.visibility = View.INVISIBLE
+                            context.startActivity<DetailActivity>()
+                        }
+                        .doOnSubscribe { progressBar.visibility = View.VISIBLE }
+                        .observeOn(Schedulers.io())
+                        .subscribe({
+                            tourDriver.onNext(it)
+                        }, {
+                            it.printStackTrace()
+                        })
             }
         }
     }

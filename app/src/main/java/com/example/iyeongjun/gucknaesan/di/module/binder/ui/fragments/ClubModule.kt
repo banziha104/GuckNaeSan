@@ -7,10 +7,14 @@ import com.example.iyeongjun.gucknaesan.ui.fragments.club.ClubViewModelFactory
 import dagger.Module
 import dagger.Provides
 import io.reactivex.subjects.BehaviorSubject
+import javax.inject.Named
 
 @Module
 class ClubModule{
     @Provides
-    fun provideClubViewModelFactory(driver : BehaviorSubject<Item>,model : ClubModel,context: Context) = ClubViewModelFactory(driver,model,context)
-
+    fun provideClubViewModelFactory(driver : BehaviorSubject<Item>,
+                                    model : ClubModel,
+                                    context: Context,
+                                    @Named("club") clickDriver : BehaviorSubject<String>)
+            = ClubViewModelFactory(driver,model,context,clickDriver)
 }
