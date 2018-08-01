@@ -1,16 +1,20 @@
 package com.example.iyeongjun.gucknaesan.ui.activities.cal
 
 import android.arch.lifecycle.ViewModelProviders
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import com.example.iyeongjun.gucknaesan.R
+import com.example.iyeongjun.gucknaesan.R.id.*
 import com.example.iyeongjun.gucknaesan.adapter.recycler.CalAdapter
 import com.example.iyeongjun.gucknaesan.api.model.club.Item
 import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
 import com.example.iyeongjun.gucknaesan.ex.plusAssign
 import com.example.iyeongjun.gucknaesan.ex.random
 import com.example.iyeongjun.gucknaesan.rx.AutoClearedDisposable
+import com.example.iyeongjun.gucknaesan.ui.dialogs.ConfirmDialog
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
@@ -61,8 +65,11 @@ class CalActivity : DaggerAppCompatActivity(), AnkoLogger {
             }
         }
         btnCal.setOnClickListener {
-            if(item != null && day != null) toast("${month}월 ${day}일에 ${item?.clubName}에 참가신청 되었습니다").show()
-            else toast("날짜와 산악회를 선택해주세요").show()
+            if(item != null && day != null){
+                val dialog = ConfirmDialog(this)
+                dialog!!.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                dialog!!.show()
+            } else toast("날짜와 산악회를 선택해주세요").show()
         }
         driver.subscribe { item = it }
     }

@@ -3,6 +3,8 @@ package com.example.iyeongjun.gucknaesan.ui.activities.main
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import com.example.iyeongjun.gucknaesan.R
+import com.example.iyeongjun.gucknaesan.R.id.mainViewpager
+import com.example.iyeongjun.gucknaesan.R.id.tab
 import com.example.iyeongjun.gucknaesan.adapter.MainPagerAdapter
 import com.example.iyeongjun.gucknaesan.ui.fragments.club.ClubFragment
 import com.example.iyeongjun.gucknaesan.ui.fragments.mount.MountFragment
@@ -41,6 +43,5 @@ class MainActivity : DaggerAppCompatActivity(), AnkoLogger {
     }
 
     override fun onBackPressed() {
-
     }
 }

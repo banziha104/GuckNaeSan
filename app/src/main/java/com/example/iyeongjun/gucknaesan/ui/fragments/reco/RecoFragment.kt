@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import com.example.iyeongjun.gucknaesan.R
 import com.example.iyeongjun.gucknaesan.adapter.recycler.RecoAdapter
 import dagger.android.support.DaggerFragment
@@ -20,10 +21,12 @@ class RecoFragment : DaggerFragment() ,AnkoLogger {
     @Inject lateinit var recoViewModelFactory: RecoViewModelFactory
     lateinit var viewModel: RecoViewModel
     val temp = this
-
+    var progressBar : ProgressBar? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_reco, container, false)
+        val view = inflater.inflate(R.layout.fragment_reco, container, false)
+        progressBar = view.findViewById(R.id.recoProgressBar)
+        return view
     }
 
     override fun onStart() {
@@ -39,7 +42,13 @@ class RecoFragment : DaggerFragment() ,AnkoLogger {
     private fun bind(){
         viewModel.driver.subscribe {
             recoRecyclerView.apply {
-                adapter = RecoAdapter(viewModel.mountModel,viewModel.context,this@RecoFragment,viewModel.sendDriver)
+                adapter = RecoAdapter(viewModel.mountModel,
+                        viewModel.context,
+                        this@RecoFragment,
+                        viewModel.sendDriver,
+                        viewModel.tourDriver,
+                        viewModel.tourApi,
+                        progressBar!!)
                 layoutManager = GridLayoutManager(viewModel.context,2)
             }
         }

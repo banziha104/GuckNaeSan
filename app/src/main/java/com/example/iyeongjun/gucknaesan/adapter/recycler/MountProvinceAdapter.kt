@@ -9,7 +9,7 @@ import android.widget.TextView
 import com.example.iyeongjun.gucknaesan.R
 import io.reactivex.subjects.BehaviorSubject
 
-class ProvinceAdapter(val data : List<String>,val clickDriver : BehaviorSubject<String>) : RecyclerView.Adapter<ProvinceAdapter.ProvinceViewHolder>(){
+class MountProvinceAdapter(val data : List<String>, val clickDriver : BehaviorSubject<String>) : RecyclerView.Adapter<MountProvinceAdapter.ProvinceViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProvinceViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_province, parent, false)
         return ProvinceViewHolder(view)

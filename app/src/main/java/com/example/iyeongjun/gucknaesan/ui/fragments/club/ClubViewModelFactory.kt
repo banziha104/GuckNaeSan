@@ -9,9 +9,10 @@ import io.reactivex.subjects.BehaviorSubject
 
 class ClubViewModelFactory(val driver : BehaviorSubject<Item>,
                            val model : ClubModel,
-                           val context : Context) : ViewModelProvider.Factory{
+                           val context : Context,
+                           val clickDriver : BehaviorSubject<String>) : ViewModelProvider.Factory{
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return ClubViewModel(driver,model,context) as T
+        return ClubViewModel(driver,model,context,clickDriver) as T
     }
 
 }

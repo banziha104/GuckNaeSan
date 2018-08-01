@@ -2,12 +2,18 @@ package com.example.iyeongjun.gucknaesan.ui.fragments.reco
 
 import android.arch.lifecycle.ViewModel
 import android.content.Context
+import com.example.iyeongjun.gucknaesan.api.arch.TourApi
 import com.example.iyeongjun.gucknaesan.api.model.mount.Item
 import com.example.iyeongjun.gucknaesan.api.model.mount.MountModel
+import com.example.iyeongjun.gucknaesan.api.model.tour.TourModel
 import com.example.iyeongjun.gucknaesan.ex.random
 import io.reactivex.subjects.BehaviorSubject
 
-class RecoViewModel(val driver : BehaviorSubject<MountModel>,val sendDriver : BehaviorSubject<Item>, val context: Context ) : ViewModel(){
+class RecoViewModel(val driver : BehaviorSubject<MountModel>,
+                    val sendDriver : BehaviorSubject<Item>,
+                    val context: Context,
+                    val tourDriver : BehaviorSubject<TourModel>,
+                    val tourApi: TourApi) : ViewModel(){
     val mountModel : ArrayList<Item>
     get() {
         lateinit var temp : ArrayList<Item>
