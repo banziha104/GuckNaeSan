@@ -35,7 +35,7 @@ class T2Fragment : Fragment() {
             if(!flag) {
                 videoView2.prepareAsync {
                     it.start()
-                    placeholder2.visibility = View.INVISIBLE
+                    placeholder2.visibility = View.GONE
                     flag = !flag
                 }
             }
