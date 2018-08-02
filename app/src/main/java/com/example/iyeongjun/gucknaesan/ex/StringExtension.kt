@@ -45,6 +45,7 @@ fun String.getProvince() : String{
         "제주도" -> result = "제주특별자치도"
         else -> result = this
     }
+    Log.d("temp", "$this /")
     return result
 
 }

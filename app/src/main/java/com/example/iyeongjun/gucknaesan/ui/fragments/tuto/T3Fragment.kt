@@ -36,11 +36,12 @@ class T3Fragment : Fragment() {
             activity!!.startActivity<MainActivity>()
             activity!!.finish()
         }
+
         DataDriver.tutoDriver.filter { it == 3 }.subscribe ({
             if(!flag) {
                 videoView3.prepareAsync {
                     it.start()
-                    placeholder3.visibility = View.INVISIBLE
+                    placeholder3.visibility = View.GONE
                     flag = !flag
                     val hd = Handler()
                     hd.postDelayed({

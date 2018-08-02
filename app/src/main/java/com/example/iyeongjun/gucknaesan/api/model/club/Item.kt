@@ -8,5 +8,5 @@ data class Item(
     @SerializedName("introduce") var cintroduce: String,
     @SerializedName("startPoint") var startPoint: String,
     @SerializedName("imgUrl") var imgUrl: String,
-    @SerializedName("province") var province: String
+    @SerializedName(" province") var province: String
 )

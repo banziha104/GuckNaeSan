@@ -41,7 +41,7 @@ class T1Fragment : Fragment() {
             if(!flag) {
                 videoView.prepareAsync {
                     it.start()
-                    placeholder1.visibility = View.INVISIBLE
+                    placeholder1.visibility = View.GONE
                 }
                 flag = !flag
             }

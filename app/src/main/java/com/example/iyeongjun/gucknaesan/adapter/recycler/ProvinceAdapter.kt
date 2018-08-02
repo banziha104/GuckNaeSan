@@ -9,7 +9,9 @@ import android.widget.TextView
 import com.example.iyeongjun.gucknaesan.R
 import io.reactivex.subjects.BehaviorSubject
 
-class ProvinceAdapter(val data : List<String>,val clickDriver : BehaviorSubject<String>) : RecyclerView.Adapter<ProvinceAdapter.ProvinceViewHolder>(){
+class ProvinceAdapter(val data : List<String>,
+                      val clickDriver : BehaviorSubject<String>,
+                      val clubProDriver : BehaviorSubject<String>) : RecyclerView.Adapter<ProvinceAdapter.ProvinceViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProvinceViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_province, parent, false)
         return ProvinceViewHolder(view)
@@ -34,6 +36,7 @@ class ProvinceAdapter(val data : List<String>,val clickDriver : BehaviorSubject<
         init {
             container.setOnClickListener {
                 clickDriver.onNext(txtTitle.text.toString())
+                clubProDriver.onNext(txtTitle.text.toString())
             }
         }
     }

@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.tuto.T2Fragment">
 
-
-    <com.yqritc.scalablevideoview.ScalableVideoView
-        android:id="@+id/videoView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/placeholder2"
-        app:layout_constraintTop_toTopOf="@+id/placeholder2" />
-
     <FrameLayout
         android:id="@+id/placeholder2"
         android:layout_width="0dp"
@@ -28,4 +18,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
+    <com.yqritc.scalablevideoview.ScalableVideoView
+        android:id="@+id/videoView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/placeholder2"
+        app:layout_constraintTop_toTopOf="@+id/placeholder2" />
+
 </android.support.constraint.ConstraintLayout>
